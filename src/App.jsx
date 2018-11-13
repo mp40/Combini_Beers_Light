@@ -34,22 +34,20 @@ class App extends React.Component {
     })
     fbASmall.once("value", (data) => {
       this.setState({
-        asahiBig: data.val()
+        asahiSmall: data.val()
       })
     })
     fbYBig.once("value", (data) => {
       this.setState({
-        asahiBig: data.val()
+        yebisuBig: data.val()
       })
     })
     fbYSmall.once("value", (data) => {
       this.setState({
-        asahiBig: data.val()
+        yebisuSmall: data.val()
       })
     })
   }
-
-
 
   addBalance() {
     this.setState({ total: this.state.total + 1000 })
@@ -57,79 +55,39 @@ class App extends React.Component {
   calcAsahi() {
     let sum = this.state.total;
     const canBig = this.state.asahiBig;
-    console.log("$?", canBig);
     const canSmall = this.state.asahiSmall;
     let can500 = 0;
     let can350 = 0;
-    console.log("$$$$", sum)
-    // let promise = new Promise(function (resolve) {
-    //   return fetch("https://pokeapi.co/api/v2/pokemon/")
-    //     .then(function (response) {
-    //       return response.json(); //get data
-    //     })
 
-    // let promise = new Promise(function (resolve) {
-    //   while (sum > canBig) {
-    //     can500++;
-    //     console.log("Add500", can500)
-    //     sum = - canBig;
-    //   }
-    //   resolve();
-    // })
-    // promise.then();
-
-    const promiseBeer = new Promise(resolve)=> {
-      let result = sum
-      while (result > canBig) {
-        can500++;
-        console.log("Add500", can500)
-        result = - canBig;
-      }
-      resolve(result);
-    }
+    //can500 = sum / canBig;
 
 
-    while (sum > canBig) {
-      can500++;
-      console.log("Add500", can500)
-      sum = - canBig;
-    }
+    can500 = Math.round(sum / canBig);
+    can350 = sum - can500 > canSmall ? 1 : 0;
+
+    this.setState({ displayAsahi: [can500, " 500ml & ", can350, " 350ml"] })
 
 
-
-    while (sum > canSmall) {
-      can350++;
-      sum = - canSmall;
-    }
-    console.log("CCC", can500, can350)
-    // function testing(item) {
-    //   const can = 0;
-    //   while (this.state.total > item) {
-    //     can++;
-    //     this.setState({ total: this.state.total -= item })
-    //   }
-    //   return can;
-    // }
-
-    // const can500 = testing(this.state.beerState.asahi[0]);
-    // const can350 = testing(this.state.beerState.asahi[1]);
-
-    //===return `500ml: ${can500}\n 350ml: ${can350}\n Change: ${sum} yen`;
-    //  }
-
-    //  console.log(newTestCalc(3000, 248, 185)) // money in pocket, cost of 500ml and 350ml Aashi Super Dry
-    //this.setState({ displayAsahi: [can500, can350] })
   }
   calcYebisu() {
-    //do calc
-    this.setState({ displayAsahi: [0, 0] })
-    //console.log(this.displayAsahi)
+    let sum = this.state.total;
+    const canBig = this.state.yebisuBig;
+    const canSmall = this.state.yebisuSmall;
+    let can500 = 0;
+    let can350 = 0;
+
+    console.log("CCC", can500, can350)
+    can500 = Math.round(sum / canBig);
+    can350 = sum - can500 > canSmall ? 1 : 0;
+
+    this.setState({ displayYebisu: [can500, " 500ml & ", can350, " 350ml"] })
   }
   render() {
-    // console.log("XXXX", this.state.asahiBig)
+    console.log("XXXX", this.state)
     // console.log(this.state.asahiSmall)
     // console.log("XXXX", this.state.yebisuBig)
     // console.log(this.state.yebisuSmall)
+    //console.log(this.state)
     return (<div className="App" >
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
