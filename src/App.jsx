@@ -92,7 +92,7 @@ class App extends React.Component {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          FFS
+          How About Another?
         </p >
       </header>
       <div>
