@@ -18,14 +18,6 @@ class App extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   fb.once("value", (data) => {
-  //     this.setState({
-  //       beerState: data.val()
-  //     })
-  //   })
-  // }
-
   componentDidMount() {
     fbABig.once("value", (data) => {
       this.setState({
@@ -52,6 +44,7 @@ class App extends React.Component {
   addBalance() {
     this.setState({ total: this.state.total + 1000 })
   }
+
   calcAsahi() {
     let sum = this.state.total;
     const canBig = this.state.asahiBig;
@@ -59,16 +52,12 @@ class App extends React.Component {
     let can500 = 0;
     let can350 = 0;
 
-    //can500 = sum / canBig;
-
-
     can500 = Math.round(sum / canBig);
     can350 = sum - can500 > canSmall ? 1 : 0;
 
-    this.setState({ displayAsahi: [can500, " 500ml & ", can350, " 350ml"] })
-
-
+    this.setState({ displayAsahi: [can500, " x 500ml & ", can350, " x 350ml"] })
   }
+
   calcYebisu() {
     let sum = this.state.total;
     const canBig = this.state.yebisuBig;
@@ -80,49 +69,27 @@ class App extends React.Component {
     can500 = Math.round(sum / canBig);
     can350 = sum - can500 > canSmall ? 1 : 0;
 
-    this.setState({ displayYebisu: [can500, " 500ml & ", can350, " 350ml"] })
+    this.setState({ displayYebisu: [can500, " x 500ml & ", can350, " x 350ml"] })
   }
   render() {
-    console.log("XXXX", this.state)
-    // console.log(this.state.asahiSmall)
-    // console.log("XXXX", this.state.yebisuBig)
-    // console.log(this.state.yebisuSmall)
-    //console.log(this.state)
     return (<div className="App" >
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           How About Another?
         </p >
+        <div className="Calcs">
+          <button className="Yen" onClick={this.addBalance.bind(this)}>Add 1000 Yen</button>
+          <p>Total: {this.state.total} Yen</p>
+          <button className="Asahi" onClick={this.calcAsahi.bind(this)}>Asahi Super Dry</button>
+          <p>Total Asahi: {this.state.displayAsahi}</p>
+          <button className="Yebisu" onClick={this.calcYebisu.bind(this)}>Yebisu</button>
+          <p>Total Yebisu: {this.state.displayYebisu}</p>
+        </div>
       </header>
-      <div className>
-        <button className="Yen" onClick={this.addBalance.bind(this)}>1000 Yen</button>
-        <p>Total: {this.state.total}</p>
-        <button className="Asahi" onClick={this.calcAsahi.bind(this)}>Asahi Super Dry</button>
-        <p>Total Asahi: {this.state.displayAsahi}</p>
-        <button className="Yebisu" onClick={this.calcYebisu.bind(this)}>Yebisu</button>
-        <p>Total Yebisu: {this.state.displayYebisu}</p>
-      </div>
     </div>
     );
   }
 }
 
 export default App;
-
-// function newTestCalc (sum, itemOne, itemTwo) {
-//   function testing (item) {
-//   let can = 0;
-//   while (sum > item) {
-//    can++;
-//    sum -= item;
-//   }
-//   return can;
-//  }
-
-//   let can500 = testing(itemOne);
-//   let can350 = testing(itemTwo);
-//   return `500ml: ${can500}\n 350ml: ${can350}\n Change: ${sum} yen`;
-//  }
-
-//  console.log(newTestCalc(3000, 248, 185)) // money in pocket, cost of 500ml and 350ml Aashi Super Dry

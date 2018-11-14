@@ -16,16 +16,22 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  height: 60%;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+.Calcs {
+  font-size: calc(10px + 1vmin);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
