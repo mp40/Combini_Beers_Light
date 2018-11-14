@@ -27,6 +27,10 @@
   font-size: calc(10px + 1vmin);
 }
 
+.Beer-results {
+  height: calc(10px + 1vmin);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
