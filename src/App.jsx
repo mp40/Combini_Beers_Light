@@ -43,6 +43,8 @@ class App extends React.Component {
 
   addBalance() {
     this.setState({ total: this.state.total + 1000 })
+    this.setState({ displayAsahi: [] })
+    this.setState({ displayYebisu: [] })
   }
 
   calcAsahi() {
@@ -52,10 +54,12 @@ class App extends React.Component {
     let can500 = 0;
     let can350 = 0;
 
-    can500 = Math.round(sum / canBig);
-    can350 = sum - can500 > canSmall ? 1 : 0;
+    can500 = Math.round(sum / (canBig * 1.08)); //adjusted for 8% sales tax
+    can350 = sum - can500 > (canSmall * 1.08) ? 1 : 0;
 
     this.setState({ displayAsahi: [can500, " x 500ml & ", can350, " x 350ml"] })
+    this.setState({ total: 0 })
+    this.setState({ displayYebisu: [] })
   }
 
   calcYebisu() {
@@ -65,11 +69,12 @@ class App extends React.Component {
     let can500 = 0;
     let can350 = 0;
 
-    console.log("CCC", can500, can350)
-    can500 = Math.round(sum / canBig);
-    can350 = sum - can500 > canSmall ? 1 : 0;
+    can500 = Math.round(sum / (canBig * 1.08));
+    can350 = sum - can500 > (canSmall * 1.08) ? 1 : 0;
 
     this.setState({ displayYebisu: [can500, " x 500ml & ", can350, " x 350ml"] })
+    this.setState({ total: 0 })
+    this.setState({ displayAsahi: [] })
   }
   render() {
     return (<div className="App" >
