@@ -40,12 +40,14 @@ class App extends React.Component {
         yebisuSmall: data.val()
       })
     })
+    this.setState({ displayAdvice: ["Go on, you've earned it"] })
   }
 
   addBalance() {
     this.setState({ total: this.state.total + 1000 })
     this.setState({ displayAsahi: [] })//empty state so it doesn't show on screen
     this.setState({ displayYebisu: [] })//empty state so it doesn't show on screen
+    this.setState({ displayAdvice: ["Go on, you've earned it"] })
   }
 
   calcAsahi() {
@@ -61,6 +63,7 @@ class App extends React.Component {
     this.setState({ displayAsahi: ["Total Asahi: ", can500, " x 500ml & ", can350, " x 350ml"] })
     this.setState({ total: 0 })//empty state so it doesn't show on screen
     this.setState({ displayYebisu: [] })//empty state so it doesn't show on screen
+    this.setState({ displayAdvice: ["drink responsibly - then have another"] })
   }
 
   calcYebisu() {
@@ -76,13 +79,14 @@ class App extends React.Component {
     this.setState({ displayYebisu: ["Total Yebisu: ", can500, " x 500ml & ", can350, " x 350ml"] })
     this.setState({ total: 0 })//empty state so it doesn't show on screen
     this.setState({ displayAsahi: [] })//empty state so it doesn't show on screen
+    this.setState({ displayAdvice: ["drink responsibly - then have another"] })
   }
 
   render() {
     return (<div className="App" >
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p className="Another">
           How About Another?
         </p >
         <div className="Calcs">
@@ -92,6 +96,7 @@ class App extends React.Component {
           <p className="Beer-results">{this.state.displayAsahi}</p>
           <button className="Yebisu" onClick={this.calcYebisu.bind(this)}>Yebisu</button>
           <p className="Beer-results">{this.state.displayYebisu}</p>
+          <p className="Advice">{this.state.displayAdvice}</p>
         </div>
       </header>
     </div>

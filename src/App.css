@@ -23,12 +23,22 @@
   color: #61dafb;
 }
 
+.Another {
+  padding-block-end: 1em;
+}
+
 .Calcs {
   font-size: calc(10px + 1vmin);
 }
 
 .Beer-results {
   height: calc(10px + 1vmin);
+}
+
+.Advice {
+  font-style: italic;
+  font-size: calc(6px + 1vmin);
+  padding-block-start: 2em;
 }
 
 @keyframes App-logo-spin {
