@@ -95,7 +95,7 @@ class App extends React.Component {
           How About Another?
         </p >
       </header>
-      <div>
+      <div className>
         <button className="Yen" onClick={this.addBalance.bind(this)}>1000 Yen</button>
         <p>Total: {this.state.total}</p>
         <button className="Asahi" onClick={this.calcAsahi.bind(this)}>Asahi Super Dry</button>
