@@ -12,7 +12,7 @@ It stores the following data:
 * Price of a 350ml can
 
 ## Install procedure
-None, just head over to Heroku.
+None, just head over to Heroku. <br/>
 https://combini-beers-light.herokuapp.com/
 
 ## How to use
@@ -23,3 +23,7 @@ There is no reset. This a feature, not a bug.
 Returns how many Asahi Super Dry beers you can get from the Combini.
 ### Click the Yebisu button
 Returns how many Yebisu beers you can get from the Combini if you are feeling fancy.
+
+*Future Plans.* <br/>
+*Full Strength Version incorporating the Common Combini Beer Api.*<br/>
+*https://github.com/mp40/CC6-API-Solo-Project*
