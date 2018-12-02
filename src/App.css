@@ -31,6 +31,30 @@
   font-size: calc(10px + 1vmin);
 }
 
+.Yen,
+.Asahi,
+.Yebisu {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: white;
+  background: #282c34;
+  border: solid 1px #0f9ada;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.Yen:active,
+.Asahi:active,
+.Yebsisu:active {
+  /*onClick*/
+  border: solid 1px #03A9F4;
+  box-shadow: none;
+  text-shadow: none;
+}
+
 .Beer-results {
   height: calc(10px + 1vmin);
 }
