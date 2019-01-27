@@ -1,7 +1,7 @@
 import React, {
   Component
 } from 'react';
-import logo from './logo.svg';
+import beer from './beer.png';
 import './App.css';
 import db from './base'
 
@@ -85,7 +85,7 @@ class App extends React.Component {
   render() {
     return (<div className="App" >
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={beer} className="App-logo" alt="logo" />
         <p className="Another">
           How About Another?
         </p >
