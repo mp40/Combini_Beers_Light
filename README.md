@@ -12,7 +12,10 @@ It stores the following data:
 * Price of a 350ml can
 
 ## Install procedure
-None, just head over to Heroku. <br/>
+```yarn install```
+
+## Is it deployed?
+Yep, just head over to Heroku. <br/>
 https://combini-beers-light.herokuapp.com/
 
 ## How to use
