@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from 'react';
+import React from 'react';
 import beer from './beer.png';
 import './App.css';
 import db from './base'
