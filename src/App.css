@@ -3,7 +3,6 @@
 }
 
 .App-logo {
-  /* animation: App-logo-spin infinite 20s linear; */
   height: 40vmin;
 }
 
@@ -49,8 +48,7 @@
 .Yen:active,
 .Asahi:active,
 .Yebsisu:active {
-  /*onClick*/
-  border: solid 1px #03A9F4;
+  border: solid 1px #03a9f4;
   box-shadow: none;
   text-shadow: none;
 }
@@ -63,14 +61,4 @@
   font-style: italic;
   font-size: calc(6px + 1vmin);
   padding-block-start: 2em;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }
