@@ -16,7 +16,6 @@ class App extends React.Component {
     };
   }
 
-  //populate state from firebase
   componentDidMount() {
     fbABig.once("value", (data) => {
       this.setState({
@@ -43,8 +42,8 @@ class App extends React.Component {
 
   addBalance() {
     this.setState({ total: this.state.total + 1000 })
-    this.setState({ displayAsahi: [] })//empty state so it doesn't show on screen
-    this.setState({ displayYebisu: [] })//empty state so it doesn't show on screen
+    this.setState({ displayAsahi: [] })
+    this.setState({ displayYebisu: [] })
     this.setState({ displayAdvice: ["Go on, you've earned it"] })
   }
 
@@ -59,8 +58,8 @@ class App extends React.Component {
     can350 = sum - can500 > (canSmall * 1.08) ? 1 : 0;
 
     this.setState({ displayAsahi: ["Total Asahi: ", can500, " x 500ml & ", can350, " x 350ml"] })
-    this.setState({ total: 0 })//empty state so it doesn't show on screen
-    this.setState({ displayYebisu: [] })//empty state so it doesn't show on screen
+    this.setState({ total: 0 })
+    this.setState({ displayYebisu: [] })
     this.setState({ displayAdvice: ["drink responsibly - then have another"] })
   }
 
@@ -75,8 +74,8 @@ class App extends React.Component {
     can350 = sum - can500 > (canSmall * 1.08) ? 1 : 0;
 
     this.setState({ displayYebisu: ["Total Yebisu: ", can500, " x 500ml & ", can350, " x 350ml"] })
-    this.setState({ total: 0 })//empty state so it doesn't show on screen
-    this.setState({ displayAsahi: [] })//empty state so it doesn't show on screen
+    this.setState({ total: 0 })
+    this.setState({ displayAsahi: [] })
     this.setState({ displayAdvice: ["drink responsibly - then have another"] })
   }
 
