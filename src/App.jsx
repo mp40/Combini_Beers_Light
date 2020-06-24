@@ -8,6 +8,8 @@ const fbASmall = db.ref("beer/asahi/1");
 const fbYBig = db.ref("beer/yebisu/0");
 const fbYSmall = db.ref("beer/yebisu/1");
 
+const SALES_TAX = 1.08;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -54,8 +56,8 @@ class App extends React.Component {
     let can500 = 0;
     let can350 = 0;
 
-    can500 = Math.round(sum / (canBig * 1.08)); //adjusted for 8% sales tax
-    can350 = sum - can500 > (canSmall * 1.08) ? 1 : 0;
+    can500 = Math.round(sum / (canBig * SALES_TAX));
+    can350 = sum - can500 > (canSmall * SALES_TAX) ? 1 : 0;
 
     this.setState({ displayAsahi: ["Total Asahi: ", can500, " x 500ml & ", can350, " x 350ml"] })
     this.setState({ total: 0 })
@@ -70,8 +72,8 @@ class App extends React.Component {
     let can500 = 0;
     let can350 = 0;
 
-    can500 = Math.round(sum / (canBig * 1.08));//adjusted for 8% sales tax
-    can350 = sum - can500 > (canSmall * 1.08) ? 1 : 0;
+    can500 = Math.round(sum / (canBig * SALES_TAX));
+    can350 = sum - can500 > (canSmall * SALES_TAX) ? 1 : 0;
 
     this.setState({ displayYebisu: ["Total Yebisu: ", can500, " x 500ml & ", can350, " x 350ml"] })
     this.setState({ total: 0 })
