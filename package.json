@@ -7,8 +7,8 @@
     "node": "12.4.0"
   },
   "dependencies": {
-    "firebase": "^7.15.0",
-    "heroku": "^7.42.1",
+    "firebase": "^7.16.1",
+    "heroku": "^7.42.4",
     "re-base": "^4.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
