@@ -7,12 +7,12 @@
     "node": "12.4.0"
   },
   "dependencies": {
-    "firebase": "^7.19.1",
-    "heroku": "^7.42.4",
+    "firebase": "^7.24.0",
+    "heroku": "^7.46.2",
     "re-base": "^4.0.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
